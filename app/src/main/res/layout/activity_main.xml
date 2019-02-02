@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/buttonB3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="+3 Points"
+            app:layout_constraintEnd_toEndOf="@+id/textViewPointsB"
+            app:layout_constraintStart_toStartOf="@+id/textViewPointsB"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPointsA" />
+
+        <Button
+            android:id="@+id/buttonB2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="+2 Points"
+            app:layout_constraintEnd_toEndOf="@+id/buttonB3"
+            app:layout_constraintStart_toStartOf="@+id/buttonB3"
+            app:layout_constraintTop_toBottomOf="@+id/buttonA3" />
+
+        <Button
+            android:id="@+id/buttonFreeA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Free Throw"
+            app:layout_constraintEnd_toEndOf="@+id/buttonA2"
+            app:layout_constraintStart_toStartOf="@+id/buttonA2"
+            app:layout_constraintTop_toBottomOf="@+id/buttonA2" />
+
+        <TextView
+            android:id="@+id/textViewPointsB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="0"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="@+id/textViewTeamB"
+            app:layout_constraintStart_toStartOf="@+id/textViewTeamB"
+            app:layout_constraintTop_toBottomOf="@+id/textVIewTeamA" />
+
+        <View
+            android:id="@+id/separatorView"
+            android:layout_width="2dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="100dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonA3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="+3 Points"
+            app:layout_constraintEnd_toEndOf="@+id/textViewPointsA"
+            app:layout_constraintStart_toStartOf="@+id/textViewPointsA"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPointsA" />
+
+        <TextView
+            android:id="@+id/textVIewTeamA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:text="Team A"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintEnd_toStartOf="@+id/separatorView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewTeamB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:text="Team B"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/separatorView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewPointsA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="0"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="@+id/textVIewTeamA"
+            app:layout_constraintStart_toStartOf="@+id/textVIewTeamA"
+            app:layout_constraintTop_toBottomOf="@+id/textVIewTeamA" />
+
+        <Button
+            android:id="@+id/buttonA2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="+2 Points"
+            app:layout_constraintEnd_toEndOf="@+id/buttonA3"
+            app:layout_constraintStart_toStartOf="@+id/buttonA3"
+            app:layout_constraintTop_toBottomOf="@+id/buttonA3" />
+
+        <Button
+            android:id="@+id/buttonFreeB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Free Throw"
+            app:layout_constraintEnd_toEndOf="@+id/buttonB2"
+            app:layout_constraintStart_toStartOf="@+id/buttonB2"
+            app:layout_constraintTop_toBottomOf="@+id/buttonB2" />
+
+        <Button
+            android:id="@+id/buttonReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="8dp"
+            android:text="Reset"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonFreeB" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
