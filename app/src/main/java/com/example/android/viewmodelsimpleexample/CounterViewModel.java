@@ -1,5 +1,7 @@
 package com.example.android.viewmodelsimpleexample;
 
+import android.view.View;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -12,35 +14,35 @@ public class CounterViewModel extends ViewModel {
     private MutableLiveData<Integer> liveTeamAPoints = new MutableLiveData<>();
     private MutableLiveData<Integer> liveTeamBPoints = new MutableLiveData<>();
 
-    public LiveData<Integer> getTeamAPoints(){
+    public LiveData<Integer> teamAPoints(){
         return liveTeamAPoints;
     }
 
-    public LiveData<Integer> getTeamBPoints(){
+    public LiveData<Integer> teamBPoints(){
         return liveTeamBPoints;
     }
 
-    public void addThreePointsA(){
+    public void addThreePointsA(View view){
         teamApoints += 3;
         updateAPoints();
     }
 
-    public void addTwoPointsA(){
+    public void addTwoPointsA(View view){
         teamApoints += 2;
         updateAPoints();
     }
 
-    public void addThreePointsB(){
+    public void addThreePointsB(View view){
         teamBpoints += 3;
         updateBPoints();
     }
 
-    public void addTwoPointsB(){
+    public void addTwoPointsB(View view){
         teamBpoints += 2;
         updateBPoints();
     }
 
-    public void resetEverything(){
+    public void resetEverything(View view){
         teamApoints = 0;
         updateAPoints();
         teamBpoints = 0;
@@ -48,7 +50,7 @@ public class CounterViewModel extends ViewModel {
     }
 
     private void updateBPoints(){
-        liveTeamBPoints.postValue(teamBpoints);
+        liveTeamBPoints.setValue(teamBpoints);
     }
 
     private void updateAPoints(){

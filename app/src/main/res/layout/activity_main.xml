@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.android.viewmodelsimpleexample.CounterViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,20 +19,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
+            android:onClick="@{viewModel::addThreePointsB}"
             android:text="+3 Points"
             app:layout_constraintEnd_toEndOf="@+id/textViewPointsB"
             app:layout_constraintStart_toStartOf="@+id/textViewPointsB"
-            app:layout_constraintTop_toBottomOf="@+id/textViewPointsA" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewPointsB" />
 
         <Button
             android:id="@+id/buttonB2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
+            android:onClick="@{viewModel::addTwoPointsB}"
             android:text="+2 Points"
             app:layout_constraintEnd_toEndOf="@+id/buttonB3"
             app:layout_constraintStart_toStartOf="@+id/buttonB3"
-            app:layout_constraintTop_toBottomOf="@+id/buttonA3" />
+            app:layout_constraintTop_toBottomOf="@+id/buttonB3" />
 
         <Button
             android:id="@+id/buttonFreeA"
@@ -44,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="0"
+            android:text="@{String.valueOf(viewModel.teamBPoints)}"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textSize="48sp"
             app:layout_constraintEnd_toEndOf="@+id/textViewTeamB"
@@ -67,6 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="+3 Points"
+            android:onClick="@{viewModel::addThreePointsA}"
             app:layout_constraintEnd_toEndOf="@+id/textViewPointsA"
             app:layout_constraintStart_toStartOf="@+id/textViewPointsA"
             app:layout_constraintTop_toBottomOf="@+id/textViewPointsA" />
@@ -102,7 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="0"
+            android:text="@{String.valueOf(viewModel.teamAPoints)}"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textSize="48sp"
             app:layout_constraintEnd_toEndOf="@+id/textVIewTeamA"
@@ -115,6 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="+2 Points"
+            android:onClick="@{viewModel::addTwoPointsA}"
             app:layout_constraintEnd_toEndOf="@+id/buttonA3"
             app:layout_constraintStart_toStartOf="@+id/buttonA3"
             app:layout_constraintTop_toBottomOf="@+id/buttonA3" />
@@ -137,6 +146,7 @@
             android:layout_marginTop="48dp"
             android:layout_marginEnd="8dp"
             android:text="Reset"
+            android:onClick="@{viewModel::resetEverything}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonFreeB" />
